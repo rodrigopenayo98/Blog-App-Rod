@@ -102,7 +102,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd political-divisions
+  cd Blog-App-Rod
 
   git clone https://github.com/rodrigopenayo98/Blog-App-Rod.git
 
