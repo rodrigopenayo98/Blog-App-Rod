@@ -1,10 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it { should validate_presence_of(:name) }
-  it { should validate_numericality_of(:posts_counter).only_integer.is_greater_than_or_equal_to(0) }
+  it 'validates the presence of the name' do
+    user = User.new(name: nil)
+    expect(user).not_to be_valid
+    expect(user.errors[:name]).to include("can't be blank")
+  end
 
-  it 'returns the latest 3 posts' do
+  it 'validates that the post counter is greater than or equal to zero' do
+    user = User.new(posts_counter: -1)
+    expect(user).not_to be_valid
+    expect(user.errors[:posts_counter]).to include('must be greater than or equal to 0')
+  end
+
+  it "returns the user's last 3 posts" do
     user = create(:user)
     post1 = create(:post, author: user, created_at: 1.day.ago)
     post2 = create(:post, author: user, created_at: 2.days.ago)
