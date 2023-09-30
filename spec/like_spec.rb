@@ -7,7 +7,7 @@ RSpec.describe Like, type: :model do
       post = create(:post)
       like = build(:like, user:, post:)
 
-      expect { like.save }.to change { post.reload.likes_count }.by(1)
+      expect { like.save }.to change { post.reload.likesCounter }.by(1)
     end
 
     it 'updates the post likes count after create' do
@@ -15,7 +15,7 @@ RSpec.describe Like, type: :model do
       post = create(:post)
       like = build(:like, user:, post:)
 
-      expect { like.save }.to change { post.reload.likes_count }.by(1)
+      expect { like.save }.to change { post.reload.likesCounter }.by(1)
     end
   end
 end
