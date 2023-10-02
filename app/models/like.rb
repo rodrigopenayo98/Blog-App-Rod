@@ -7,6 +7,6 @@ class Like < ApplicationRecord
   private
 
   def update_counter_likes
-    post.update(likes_count: post.likes.count)
+    post.update(likesCounter: post.likes.count)
   end
 end
