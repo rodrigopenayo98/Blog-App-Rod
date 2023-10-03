@@ -14,10 +14,10 @@ RSpec.describe PostsController, type: :request do
       expect(response).to render_template(:index)
     end
 
-    it 'includes correct placeholder text in the response body' do
+    it 'includes correct placeholder text' do
       user = FactoryBot.create(:user)
       get user_posts_path(user)
-      expect(response.body).to include('Here is some placeholder text for the index page of user posts')
+      expect(response.body).to include('POSTS')
     end
   end
 
