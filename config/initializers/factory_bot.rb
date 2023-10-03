@@ -2,6 +2,7 @@ require 'factory_bot'
 
 FactoryBot.define do
   factory :user do
+    sequence(:id) { |n| n }
     name { 'Usuario de Prueba' }
     bio { 'Biografía de Prueba' }
     photo { 'imagen.jpg' }
