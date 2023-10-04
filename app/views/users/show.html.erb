@@ -1,1 +1,19 @@
-<h1>USER PROFILE</h1>
+<%= render 'shared/user_card', user: @user %>
+
+
+<div class="user-post">
+ <h2>Biography</h2>
+ <div class="bio-user-container">
+   <p class="bio-user">
+     <%= @user.bio%> 
+   </p>
+ </div>
+</div>
+
+<%@user.latest_posts.each do |post|%>
+  <%= render 'shared/post_card', post: post%>
+<%end%>
+
+<div class="btn-all-posts">
+  <%= link_to "See All Posts", user_posts_path(user_id: @user.id), class: 'btn-all-posts'%>
+</div>
