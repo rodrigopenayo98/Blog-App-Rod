@@ -1,1 +1,31 @@
-<h1>POST WITH USER ID</h1>
+<div class="main-container">
+  <div class="post">
+    <div class="post-header">
+      <ul>
+        <li>
+          <h3>
+            <%= @post.title %> 
+            <span>by <%= @post.author.name %></span>
+          </h3>          
+        </li>
+        <li class="post-interactions2">
+          <span>Comments: <%= @post.comments_counter %></span>,
+          <span>Likes: <%= @post.likes_counter %></span>
+        </li>
+      </ul>
+    </div>
+    <div class="post-paragraph">
+        <p><%= @post.text %></p>
+    </div>
+  </div>
+
+  <div class="comments">
+    <ul>
+      <% @post.recent_comments.each do |comment| %>
+        <li>
+          <%= render partial: 'shared/comment_card', locals: { comment: comment } %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
