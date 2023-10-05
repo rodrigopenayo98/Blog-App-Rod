@@ -9,7 +9,7 @@
 
   <div class="comments">
     <ul>
-      <% post.recent_comments.each do |comment| %>
+      <% post.latest_comments.each do |comment| %>
         <li>
           <%= render partial: 'shared/comment_card', locals: { comment: comment } %>
         </li>

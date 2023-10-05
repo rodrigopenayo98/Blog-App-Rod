@@ -9,8 +9,8 @@
           </h3>          
         </li>
         <li class="post-interactions2">
-          <span>Comments: <%= @post.comments_counter %></span>,
-          <span>Likes: <%= @post.likes_counter %></span>
+          <span>Comments: <%= @post.commentsCounter %></span>,
+          <span>Likes: <%= @post.likesCounter %></span>
         </li>
       </ul>
     </div>
@@ -21,7 +21,7 @@
 
   <div class="comments">
     <ul>
-      <% @post.recent_comments.each do |comment| %>
+      <% @post.latest_comments.each do |comment| %>
         <li>
           <%= render partial: 'shared/comment_card', locals: { comment: comment } %>
         </li>

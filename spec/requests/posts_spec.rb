@@ -14,10 +14,13 @@ RSpec.describe PostsController, type: :request do
       expect(response).to render_template(:index)
     end
 
-    it 'includes correct placeholder text' do
+    it 'includes correct elements' do
       user = FactoryBot.create(:user)
       get user_posts_path(user)
-      expect(response.body).to include('POSTS')
+
+      expect(response.body).to include(user.name)
+      expect(response.body).to include('<a href="#">')
+      expect(response.body).to include('<button type="button" class="btn-pagination">Pagination</button>')
     end
   end
 

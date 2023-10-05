@@ -56,9 +56,9 @@ RSpec.describe Post, type: :model do
         create(:comment, user:, post:, created_at: 1.hour.ago)
       end
 
-      recent_comments = post.latest_comments
+      latest_comments = post.latest_comments
 
-      expect(recent_comments.count).to eq(5)
+      expect(latest_comments.count).to eq(5)
     end
   end
 end
