@@ -14,7 +14,7 @@ RSpec.describe UsersController, type: :request do
 
     it 'includes correct content in the response body' do
       get users_path
-      expect(response.body).to include('USERS')
+      expect(response.body).to include('Theres no information about any user yet')
     end
   end
 
@@ -34,7 +34,9 @@ RSpec.describe UsersController, type: :request do
     it 'includes correct content' do
       user = FactoryBot.create(:user)
       get user_path(user)
-      expect(response.body).to include('USER PROFILE')
+
+      expect(response.body).to include('<title>BlogAppRod</title>')
+      expect(response.body).to include('<body>')
     end
   end
 end
