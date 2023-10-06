@@ -2,19 +2,27 @@
   <%= render partial: 'shared/user_card', locals: { user: @user } %>
 </a>
 
+<div class="contaienr-btn-add-post">
+<p class="btn-add-post"><%= link_to "Add Post", new_user_post_path %><p>
+</div>
+
 <% @posts.each do |post| %>
   <a href="/users/<%= post.author_id%>/posts/<%= post.id%>">
     <%= render partial: 'shared/post_card', locals: { post: post } %>
   </a>
 
   <div class="comments">
+  <% if post.recent_comments.any? %>
     <ul>
       <% post.latest_comments.each do |comment| %>
         <li>
           <%= render partial: 'shared/comment_card', locals: { comment: comment } %>
         </li>
       <% end %>
-    </ul>
+    </ul>     
+    <% else %>
+      <p>There are no comments yet.</p>
+    <% end %>
   </div>
 <% end %>
 

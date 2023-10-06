@@ -1,0 +1,18 @@
+<div class="post">
+  <h1>Add New Post</h1>
+  <%= form_with(model: [@user, @post], url: user_posts_path(@user)) do |f| %>
+    <div class="f-post">
+      <div class="f-label">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "input", required: true %>
+      </div>
+      <div class="f-label">
+        <%= f.label :text %>
+        <%= f.text_area :text, class: "input", rows: 3, cols: 25, required: true %>
+      </div>
+      <div class="btn-container">
+        <p><%= f.submit "Add Post", class: "btn center-btn"%></p>
+      </div>
+    </div>
+  <% end %>
+</div>
