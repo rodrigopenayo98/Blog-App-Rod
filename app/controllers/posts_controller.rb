@@ -1,10 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
-    @posts = @user.posts
-
-    puts "Original PostsController - Index Action"
-    log_query_count
+    @user = User.includes(posts: :comments).find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
@@ -14,7 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @user = current_user
-    @post = @user.posts.build
+    @post = @user.posts.includes(:comments).find(params[:id])
   end
 
   def create
@@ -40,9 +37,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text)
-  end
-
-  def log_query_count
-    puts "Number of SQL Queries: #{ActiveRecord::Base.connection.query_cache.length}"
   end
 end
