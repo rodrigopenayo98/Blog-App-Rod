@@ -17,6 +17,9 @@
     <div class="post-paragraph">
         <p><%= @post.text %></p>
     </div>
+    <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |f| %>
+      <span><%= f.submit "Like", class: "btn" %></span>
+    <% end %>
   </div>
 
   <div class="comments">
@@ -27,5 +30,6 @@
         </li>
       <% end %>
     </ul>
+     <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post), class: 'btn' %>
   </div>
 </div>
