@@ -8,7 +8,7 @@ RSpec.describe 'User Post Show Page', type: :feature do
     visit user_post_path(user_id: user.id, id: @post.id)
   end
 
-  it "Displays title" do
+  it 'Displays title' do
     expect(page).to have_content(@post.title)
   end
 
