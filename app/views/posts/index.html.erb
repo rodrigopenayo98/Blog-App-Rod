@@ -7,8 +7,8 @@
 </div>
 
 <% @posts.each do |post| %>
-  <a href="/users/<%= post.author_id%>/posts/<%= post.id%>">
-    <%= render partial: 'shared/post_card', locals: { post: post } %>
+  <a href="<%= user_post_path(@user, post) %>" id="user_post_<%= post.id %>">
+    <%= render 'shared/post_card', post: post %>
   </a>
 
   <div class="comments">
