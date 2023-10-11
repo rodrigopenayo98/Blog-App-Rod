@@ -15,4 +15,10 @@ class User < ApplicationRecord
   def latest_posts
     posts.order(created_at: :desc).limit(3)
   end
+
+  after_initialize :set_defaults
+
+  def set_defaults
+    self.post_counter ||= 0
+  end
 end
