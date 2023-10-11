@@ -19,6 +19,6 @@ class User < ApplicationRecord
   after_initialize :set_defaults
 
   def set_defaults
-    self.post_counter ||= 0
+    self.posts_counter ||= 0
   end
 end
