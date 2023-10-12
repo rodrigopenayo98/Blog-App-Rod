@@ -45,7 +45,17 @@ label {
 }
 
 #user_remember_me {
+  font-family: Arial, Helvetica, sans-serif;
   margin-top: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+#user_password_confirmation {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 580px;
+  margin-top: 10px;
+  padding: 8px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
