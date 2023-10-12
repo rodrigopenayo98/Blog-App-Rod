@@ -1,10 +1,10 @@
 <div class="comments">
 
-<h2>Log in</h2>
+<h2 class="title-log-in">Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="normal-inputs">
-    <%= f.label :email %><br />
+    <%= f.label :email  %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
   </div>
 
