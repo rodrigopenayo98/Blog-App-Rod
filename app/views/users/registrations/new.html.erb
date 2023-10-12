@@ -1,39 +1,43 @@
-<h2>Sign up</h2>
+<div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="normal-inputs">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "User Name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "User Name", class: 'input' %>
   </div>
 
-  <div class="field">
+  <div class="normal-inputs">
     <%= f.label :bio %><br />
-    <%= f.text_field :bio, autofocus: true, autocomplete: "bio", placeholder: "User Biography" %>
+    <%= f.text_field :bio, autofocus: true, autocomplete: "bio", placeholder: "User Biography", class: 'input' %>
   </div>
 
-  <div class="field">
+  <div class="normal-inputs">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
   </div>
 
-  <div class="field">
+  <div class="normal-inputs">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: 'input' %>
   </div>
 
-  <div class="field">
+  <div class="normal-inputs">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input' %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="button-container">
+    <%= f.submit "Sign up", class: "btn" %>
   </div>
 <% end %>
 
 <%= render "users/shared/links" %>
+
+
+</div>
+<h2>Sign up</h2>
