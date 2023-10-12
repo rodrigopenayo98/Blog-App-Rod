@@ -4,15 +4,6 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
-  <div class="field">
-   <%= f.label :name %><br />
-   <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: "form-control" %>
-</div>
-
-<div class="field">
-   <%= f.label :bio %><br />
-   <%= f.text_field :bio, autofocus: true, autocomplete: "bio", placeholder: "Bio", class: "form-control" %>
-</div>
 
   <div class="normal-inputs">
       <%= f.label :name %><br />
@@ -21,8 +12,8 @@
 
   <div class="normal-inputs">
       <%= f.label :bio %><br />
-      <%= f.text_field :bio, autofocus: true, autocomplete: "biography", placeholder: "Biography", class: 'input' %>
-  </div>
+      <%= f.text_field :bio, autofocus: true, autocomplete: "biography", placeholder: "Biography", class: 'input' %>
+  </div>
 
   <div class="normal-inputs">
     <%= f.label :email %><br />
