@@ -1,11 +1,12 @@
 <div>
+<h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
   <div class="normal-inputs">
     <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "User Name", class: 'input' %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name", class: 'input' %>
   </div>
 
   <div class="normal-inputs">
@@ -17,6 +18,8 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input' %>
   </div>
+  
+  <p>This is the file</p>
 
   <div class="normal-inputs">
     <%= f.label :password %>
@@ -40,4 +43,3 @@
 
 
 </div>
-<h2>Sign up</h2>
