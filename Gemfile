@@ -33,6 +33,10 @@ gem 'cancancan'
 
 gem 'letter_opener'
 
+gem 'active_model_serializers'
+
+gem 'jwt'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
