@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_10_13_012046) do
+=======
+ActiveRecord::Schema[7.0].define(version: 20_231_012_154_917) do
+>>>>>>> 8d2fc2e96fe3edd7842fa871261f16ebcb174854
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,6 +49,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_13_012046) do
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
+<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "photo"
@@ -63,6 +68,25 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_13_012046) do
     t.datetime "confirmation_sent_at"
     t.string "role"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'photo'
+    t.text 'bio'
+    t.integer 'posts_counter'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'posts_count'
+    t.string 'email', default: '', null: false
+    t.string 'encrypted_password', default: '', null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.string 'confirmation_token'
+    t.datetime 'confirmed_at'
+    t.datetime 'confirmation_sent_at'
+    t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
+>>>>>>> 8d2fc2e96fe3edd7842fa871261f16ebcb174854
   end
 
   add_foreign_key "comments", "posts"
