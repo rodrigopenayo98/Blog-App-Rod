@@ -1,0 +1,29 @@
+<div class="comments">
+
+<h2>Change your password</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "users/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :reset_password_token %>
+
+  <div class="normal-inputs">
+    <%= f.label :password, "New password" %><br />
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+    <% end %>
+    <%= f.password_field :password, autofocus: true, autocomplete: "new-password", class: 'input' %>
+  </div>
+
+  <div class="normal-inputs">
+    <%= f.label :password_confirmation, "Confirm new password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input' %>
+  </div>
+
+  <div class="button-container">
+    <%= f.submit "Change my password", class: 'btn' %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
+
+</div>
