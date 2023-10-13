@@ -9,6 +9,8 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
+    @comment = Comment.new
+    @like = Like.new
   end
 
   def new
@@ -41,11 +43,10 @@ class PostsController < ApplicationController
     authorize! :destroy, @post
     if @post.destroy
       flash.now[:success] = 'Post was successfully deleted!'
-      redirect_to user_posts_path
     else
-     flash[:error] = 'Post couldnt be deleted!'
-  redirect_to user_posts_path
+      flash[:error] = 'Post couldnt be deleted!'
     end
+    redirect_to user_posts_path
   end
 
   private
