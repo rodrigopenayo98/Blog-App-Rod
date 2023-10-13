@@ -29,6 +29,8 @@ gem 'jbuilder'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'cancancan'
+
 gem 'letter_opener'
 
 # Use Redis adapter to run Action Cable in production

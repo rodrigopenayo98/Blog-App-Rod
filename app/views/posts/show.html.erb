@@ -17,8 +17,13 @@
     <div class="post-paragraph">
         <p><%= @post.text %></p>
     </div>
+    <div class="delete-button-container">
+     <% if @post && can?(:destroy, @post) %>
+        <%= button_to "Delete Post", user_post_path(user_id: @user.id, id: @post.id), method: :delete, class: "delete-btn" %>
+      <% end %>
+    </div>
     <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |f| %>
-      <span><%= f.submit "Like", class: "btn" %></span>
+      <span><%= f.submit "Like", class: "btn-delete" %></span>
     <% end %>
   </div>
 
@@ -31,5 +36,10 @@
       <% end %>
     </ul>
      <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post), class: 'btn-add-comment' %>
+     <div class="delete-button-container">
+     <% if can? :destroy, comment %>
+        <%= button_to "Delete Comment", user_post_comment_path(user_id: @user.id, post_id: post.id, id: comment.id), method: :delete,  class: 'delete-comment-btn' %>
+     <% end %>
+    </div>
   </div>
 </div>
