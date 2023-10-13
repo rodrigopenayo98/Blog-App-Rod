@@ -12,7 +12,7 @@
   </a>
 
   <div class="comments">
-  <% if post.recent_comments.any? %>
+  <% if post.latest_comments.any? %>
     <ul>
       <% post.latest_comments.each do |comment| %>
         <li>
